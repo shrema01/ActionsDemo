@@ -23,4 +23,6 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Display the Message
-        run: python message.py
+        run: |
+          python message.py
+          echo ${{ github.workspace }}
