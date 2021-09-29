@@ -1,9 +1,10 @@
 name: Secrets and Environment Variables
 env:
   scope1: workflow
+  currentbranch: ${{ github.ref }} 
 on:
   push:
-    branches: ${{ github.ref }} 
+    branches: currentbranch 
 
 
 jobs:
