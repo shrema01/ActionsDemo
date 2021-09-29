@@ -1,11 +1,12 @@
 name: Secrets and Environment Variables
 env:
-  scope1: workflow
+  scope1: Workflow
   
   
 on:
   push:
-    branches: secrets
+    branches: $GITHUB_REF
+    
   workflow_dispatch:
     inputs:
       mytext:
