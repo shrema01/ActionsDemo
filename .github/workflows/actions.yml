@@ -31,4 +31,5 @@ jobs:
           echo ${scope3}
           echo ${{github.event.inputs.company}}
           echo ${{secrets.MY_SECRET}}
+          echo ${env.scope1}
 
