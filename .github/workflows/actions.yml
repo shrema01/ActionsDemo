@@ -1,8 +1,9 @@
-name: CI with Actions
-
+name: Secrets and Environment Variables
+env:
+  scope1: workflow
 on:
   push:
-    branches: [ matrix ]
+    branches: ${{ github.ref }} 
 
 jobs:
   build:
@@ -13,8 +14,8 @@ jobs:
         python-version: ['2.7', '3.6', '3.7', '3.8', '3.9']
 
     steps:
+    
       - uses: actions/checkout@v2
-
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
