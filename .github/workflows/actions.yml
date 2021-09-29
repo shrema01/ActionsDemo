@@ -23,6 +23,7 @@ jobs:
       
     steps:    
       - name: Display the Message
+        id: stepss
         env:
           scope3: Step
         run: |
@@ -32,4 +33,13 @@ jobs:
           echo ${{github.event.inputs.company}}
           echo ${{secrets.MY_SECRET}}
           echo ${env.scope1}
+  test:
+    runs-on: ubuntu-latest      
+    steps:    
+      - name: Display the Message
+        env:
+          scope3: Step
+        run: |
+          echo ${{jobs.build.steps.name}
+          echo ${scope2}
 
