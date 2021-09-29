@@ -40,6 +40,6 @@ jobs:
         env:
           scope3: Step
         run: |
-          echo ${{jobs.build.env}}
+          echo ${{build.env}}
           echo ${scope2}
 
