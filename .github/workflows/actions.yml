@@ -9,7 +9,10 @@ on:
     
   workflow_dispatch:
     inputs:
-      mytext:
+      company:
+        description: 'Company Name'
+        required: true
+        default: 'LNRS'
         
 
 
@@ -27,4 +30,6 @@ jobs:
           echo ${scope1}
           echo ${scope2}
           echo ${scope3}
+          echo ${{github.event.inputs.company}}
+          echo ${{secrets.MY_SECRET}}
 
