@@ -32,9 +32,10 @@ jobs:
           echo ${scope3}
           echo ${{github.event.inputs.company}}
           echo ${{secrets.MY_SECRET}}
-          echo ${env.scope1}
+          echo ${scope1}
   test:
-    runs-on: ubuntu-latest      
+    runs-on: ubuntu-latest  
+    needs: build
     steps:    
       - name: Display the Message
         env:
