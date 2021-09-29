@@ -32,7 +32,7 @@ jobs:
           echo ${scope3}
           echo ${{github.event.inputs.company}}
           echo ${{secrets.MY_SECRET}}
-          echo ${scope1}
+          echo ${{env.scope1}}
   test:
     runs-on: ubuntu-latest  
     needs: build
