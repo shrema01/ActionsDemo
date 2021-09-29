@@ -4,7 +4,8 @@ env:
   currentbranch: ${{ github.ref }} 
 on:
   push:
-    branches: currentbranch 
+    branches: 
+      - currentbranch 
 
 
 jobs:
