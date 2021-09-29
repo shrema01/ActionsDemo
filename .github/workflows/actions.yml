@@ -1,28 +1,35 @@
-name: CI with Actions
-
+name: Secrets and Environment Variables
+env:
+  scope1: Workflow
+  
+  
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: secrets
+    
+  workflow_dispatch:
+    inputs:
+      company:
+        description: 'Company Name'
+        required: true
+        default: 'LNRS'
+        
+
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: ['2.7', '3.6', '3.7', '3.8', '3.9']
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-
+    runs-on: ubuntu-latest
+    env:
+      scope2: Job
+      
+    steps:    
       - name: Display the Message
+        env:
+          scope3: Step
         run: |
-          python message.py
-          echo ${{ github.workspace }}
+          echo ${scope1}
+          echo ${scope2}
+          echo ${scope3}
+          echo ${{github.event.inputs.company}}
+          echo ${{secrets.MY_SECRET}}
+
