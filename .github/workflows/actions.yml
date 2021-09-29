@@ -40,6 +40,5 @@ jobs:
         env:
           scope3: Step
         run: |
-          echo ${{jobs.build.stepss.name}}
-          echo ${scope2}
+          echo "This is ${{github.job}}"
 
