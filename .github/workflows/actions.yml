@@ -1,4 +1,4 @@
-name: CI with Actions
+name: CI with matrix
 
 
 on:
