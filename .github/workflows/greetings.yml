@@ -29,4 +29,4 @@ jobs:
           echo ${{github.event.inputs.company}}
           echo ${{secrets.MY_SECRET}}
           echo ${{env.scope}}
-          echo ${{env.company{}
+          echo ${{env.company}}
